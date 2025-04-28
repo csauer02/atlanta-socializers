@@ -1,0 +1,42 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Preferences Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  {# Preferences header #}
+  {% dnd_area "preferences_header" label="Preferences Header", class="preferences-header" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <h1>Email Preferences</h1>
+        <p>Customize what emails you receive from the Atlanta Socializers Club.</p>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Preferences form #}
+  {% dnd_area "preferences_form" label="Preferences Form", class="preferences-form" %}
+    {% dnd_module path="@hubspot/form" %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Additional information #}
+  {% dnd_area "additional_info" label="Additional Info", class="additional-info" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="info-box">
+          <h2>About Our Communications</h2>
+          <p>The Atlanta Socializers Club sends several types of emails:</p>
+          <ul>
+            <li><strong>Event Reminders:</strong> Notifications about upcoming events.</li>
+            <li><strong>Fundraising Updates:</strong> Information about our charitable initiatives.</li>
+          </ul>
+          <p>You can opt in or out of these communications at any time using the form above.</p>
+          <p>We respect your privacy and will never share your information with third parties. See our <a href="/privacy">Privacy Policy</a> for more information.</p>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+{% endblock body %}

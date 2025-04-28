@@ -1,0 +1,93 @@
+<!--
+templateType: global_partial
+isAvailableForNewContent: false
+label: Base Layout
+-->
+{% dnd_section %}
+  {% dnd_column %}
+    {% dnd_row %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <!DOCTYPE html>
+          <html lang="{{ html_language }}" {{ html_lang_dir }}>
+            <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>{{ page_meta.html_title }}</title>
+              <meta name="description" content="{{ page_meta.meta_description }}">
+              {{ standard_header_includes }}
+              
+              {% if content.is_draft_mode %}
+                {{ require_css(get_asset_url("css/main.css")) }}
+                {{ require_js(get_asset_url("js/main.js")) }}
+              {% endif %}
+            </head>
+            <body>
+              {# Global header - using HubSpot's built-in header module #}
+              <header class="header">
+                <div class="header-container">
+                  <div class="logo">
+                    <a href="/">Atlanta Socializers Club</a>
+                  </div>
+                  <nav class="main-nav">
+                    <ul>
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/events">Events</a></li>
+                      <li><a href="/guide">Happy Hour Guide</a></li>
+                      <li><a href="/about">About</a></li>
+                      <li><a href="/contact">Contact</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </header>
+              
+              {# Main content - will be different for each page #}
+              <main class="body-container">
+                {% block body %}
+                {% endblock body %}
+              </main>
+              
+              {# Global footer #}
+              <footer class="footer">
+                <div class="footer-container">
+                  <div class="footer-logo">
+                    <a href="/">Atlanta Socializers Club</a>
+                  </div>
+                  <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/events">Events</a></li>
+                      <li><a href="/guide">Happy Hour Guide</a></li>
+                      <li><a href="/about">About</a></li>
+                      <li><a href="/contact">Contact</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                      <a href="#" class="social-icon">Instagram</a>
+                      <a href="#" class="social-icon">Facebook</a>
+                      <a href="#" class="social-icon">Twitter</a>
+                    </div>
+                  </div>
+                  <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for the latest events and updates.</p>
+                    <a href="/preferences" class="cta-button">Subscribe</a>
+                  </div>
+                </div>
+                <div class="footer-bottom">
+                  <p>&copy; 2025 Atlanta Socializers Club. All rights reserved.</p>
+                  <p><a href="/privacy">Privacy Policy</a></p>
+                </div>
+              </footer>
+              
+              {{ standard_footer_includes }}
+            </body>
+          </html>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

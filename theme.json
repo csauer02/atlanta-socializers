@@ -1,0 +1,17 @@
+{
+  "label": "Atlanta Socializers Club",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "preview_path": "./templates/pages/home.html",
+  "screenshot_path": "./images/theme-screenshot.png",
+  "enable_domain_stylesheets": false,
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 767px)",
+      "previewWidth": { "value": 477 }
+    }
+  ]
+}

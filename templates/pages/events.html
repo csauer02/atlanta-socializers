@@ -1,0 +1,39 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Events Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  {# Events header #}
+  {% dnd_area "events_header" label="Events Header", class="events-header" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <h1>Upcoming Events</h1>
+        <p>Join us at our next gathering</p>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Events listing #}
+  {% dnd_area "events_listing" label="Events Listing", class="events-grid" %}
+    {# Using HubSpot's built-in blog listing module with custom styling #}
+    {% dnd_module path="@hubspot/blog_listing" 
+      blog_listing_html={{
+        "enable_featured_image": true,
+        "show_author": false,
+        "show_date": true,
+        "listing_layout": "grid",
+        "cards_per_row": 3,
+        "filter_by_topic": false
+      }}
+      featured_image={{
+        "showing_image": true,
+        "max_width": 800,
+        "loading": "lazy"
+      }}
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+{% endblock body %}

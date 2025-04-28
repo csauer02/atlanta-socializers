@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.local
+.env.development
+.env.production
+*.log
+dist/
+.hubspot/
+lighthouse-results/
+coverage/
+hubspot.config.yml
+.hubspot-temp.yml
+*.bak
+.DS_Store
+# Temporary files that might contain secrets
+*-temp.yml
+.hubspot-temp.yml

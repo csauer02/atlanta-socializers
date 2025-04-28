@@ -1,0 +1,75 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Guide Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  {# Guide header #}
+  {% dnd_area "guide_header" label="Guide Header", class="guide-header" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <h1>Atlanta Happy Hour Guide</h1>
+        <p>Discover the best happy hour spots in Atlanta, curated by the Socializers Club.</p>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Guide content #}
+  {% dnd_area "guide_content" label="Guide Content", class="guide-content" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="guide-section">
+          <h2>Midtown</h2>
+          <div class="venue-list">
+            <div class="venue-card">
+              <h3>The Establishment</h3>
+              <p><strong>Address:</strong> 123 Peachtree St</p>
+              <p><strong>Hours:</strong> 4-7 PM, Monday-Friday</p>
+              <p><strong>Specials:</strong> $5 draft beers, $6 wine by the glass, $7 specialty cocktails</p>
+            </div>
+            
+            <div class="venue-card">
+              <h3>The Lawrence</h3>
+              <p><strong>Address:</strong> 456 Juniper St</p>
+              <p><strong>Hours:</strong> 5-7 PM, Tuesday-Sunday</p>
+              <p><strong>Specials:</strong> Half-price appetizers, $5 house cocktails</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="guide-section">
+          <h2>Buckhead</h2>
+          <div class="venue-list">
+            <div class="venue-card">
+              <h3>The Whiskey Bar</h3>
+              <p><strong>Address:</strong> 789 Piedmont Ave</p>
+              <p><strong>Hours:</strong> 4-8 PM, Monday-Friday</p>
+              <p><strong>Specials:</strong> $8 premium whiskey pours, $10 flights</p>
+            </div>
+            
+            <div class="venue-card">
+              <h3>Gypsy Kitchen</h3>
+              <p><strong>Address:</strong> 321 Lenox Rd</p>
+              <p><strong>Hours:</strong> 4-6 PM, Daily</p>
+              <p><strong>Specials:</strong> $6 sangria, $8 tapas</p>
+            </div>
+          </div>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Map embed #}
+  {% dnd_area "map_section" label="Map Section", class="map-section" %}
+    {% dnd_module path="@hubspot/custom_html" %}
+      {% module_attribute "html" %}
+        <div class="map-container">
+          <h2>Find These Locations</h2>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.7411321579!2d-84.56052538359373!3d33.76804959168519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045d6993098d%3A0x66fede2f990b630b!2sAtlanta%2C%20GA!5e0!3m2!1sen!2sus!4v1656535528155!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+{% endblock body %}

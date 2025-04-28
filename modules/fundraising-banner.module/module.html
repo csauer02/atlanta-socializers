@@ -1,0 +1,35 @@
+<!--
+  Fundraising banner module for Atlanta Socializers Club
+  Displays information about fundraising initiatives and a call-to-action button
+-->
+<div class="fundraising-banner" style="background-color: {{ module.background_color }};">
+  <div class="fundraising-content">
+    {% if module.heading %}
+      <h2 class="fundraising-heading">{{ module.heading }}</h2>
+    {% endif %}
+    
+    {% if module.description %}
+      <div class="fundraising-description">{{ module.description }}</div>
+    {% endif %}
+    
+    {% if module.statistics %}
+      <div class="fundraising-stats">
+        {% for stat in module.statistics %}
+          <div class="stat-item">
+            <span class="stat-value">{{ stat.stat_value }}</span>
+            <span class="stat-label">{{ stat.stat_label }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    
+    {% if module.cta_text and module.cta_link.url.href %}
+      <a href="{{ module.cta_link.url.href }}" 
+         class="cta-button"
+         {% if module.cta_link.open_in_new_tab %}target="_blank"{% endif %}
+         {% if module.cta_link.no_follow %}rel="nofollow"{% endif %}>
+        {{ module.cta_text }}
+      </a>
+    {% endif %}
+  </div>
+</div>

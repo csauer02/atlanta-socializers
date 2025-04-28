@@ -1,0 +1,9 @@
+{
+  "label": "Fundraising Banner",
+  "css_assets": [],
+  "js_assets": [],
+  "icon": "heart",
+  "global": false,
+  "smart_type": "NOT_SMART",
+  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"]
+}

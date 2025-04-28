@@ -1,0 +1,121 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: About Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  {# About header #}
+  {% dnd_area "about_header" label="About Header", class="about-header" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <h1>About Atlanta Socializers Club</h1>
+        <p>Our story, mission, and the community we're building.</p>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Mission section #}
+  {% dnd_area "mission_section" label="Mission Section", class="mission-section" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="mission-content">
+          <h2>Our Mission</h2>
+          <p>The Atlanta Socializers Club was founded in June 2021 by Roger Rutkowski to create a safe space for LGBT+ and Allies to interact.</p>
+          <p>We believe in building community through shared experiences, fostering connections, and creating inclusive environments where everyone feels welcome.</p>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Growth section #}
+  {% dnd_area "growth_section" label="Growth Section", class="growth-section" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="growth-content">
+          <h2>Our Growth</h2>
+          <p>Since our founding, the club has grown to 4.5k members with 150-300 attendees at monthly events.</p>
+          <p>We organize events at venues including the Atlanta Opera, The Intercontinental Hotel, The Kimpton Hotel, and various theaters throughout the city.</p>
+          <div class="stats-container">
+            <div class="stat">
+              <span class="stat-number">4.5K</span>
+              <span class="stat-label">Members</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">300+</span>
+              <span class="stat-label">Monthly Attendees</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">$6K+</span>
+              <span class="stat-label">Raised for Charity</span>
+            </div>
+          </div>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Charity section #}
+  {% dnd_area "charity_section" label="Charity Section", class="charity-section" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="charity-content">
+          <h2>Supporting Our Community</h2>
+          <p>The club raises money for Lost and Found Youth charity, contributing over $6k in 2023 and helping secure an additional $20k in funding.</p>
+          <p>Lost and Found Youth supports LGBTQ+ youth facing homelessness in Atlanta, providing shelter, meals, healthcare, and counseling services.</p>
+          <a href="/donate" class="cta-button">Support Our Charity Work</a>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Team section #}
+  {% dnd_area "team_section" label="Team Section", class="team-section" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="team-content">
+          <h2>Our Team</h2>
+          <div class="team-grid">
+            <div class="team-member">
+              <img src="{{ get_asset_url('../images/placeholder.jpg') }}" alt="Roger Rutkowski" class="team-photo">
+              <h3>Roger Rutkowski</h3>
+              <p class="team-role">Founder</p>
+              <p>Roger founded the Atlanta Socializers Club in 2021 with a vision to create inclusive social experiences for the LGBTQ+ community.</p>
+            </div>
+            
+            <div class="team-member">
+              <img src="{{ get_asset_url('../images/placeholder.jpg') }}" alt="Team Member" class="team-photo">
+              <h3>Jamie Smith</h3>
+              <p class="team-role">Events Coordinator</p>
+              <p>Jamie manages our event calendar and works with venues to create unforgettable experiences.</p>
+            </div>
+            
+            <div class="team-member">
+              <img src="{{ get_asset_url('../images/placeholder.jpg') }}" alt="Team Member" class="team-photo">
+              <h3>Alex Chen</h3>
+              <p class="team-role">Outreach Director</p>
+              <p>Alex leads our charitable initiatives and community partnerships.</p>
+            </div>
+          </div>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Join section #}
+  {% dnd_area "join_section" label="Join Section", class="join-section" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="join-content">
+          <h2>Join Our Community</h2>
+          <p>Atlanta Socializers Club welcomes everyone who supports our mission of creating inclusive spaces.</p>
+          <p>Sign up for our newsletter to stay informed about upcoming events and initiatives!</p>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+    
+    {% dnd_module path="@hubspot/form" %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+{% endblock body %}

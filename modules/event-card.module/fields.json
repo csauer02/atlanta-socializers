@@ -1,0 +1,79 @@
+[
+  {
+    "name": "event_image",
+    "label": "Event Image",
+    "required": false,
+    "type": "image",
+    "default": {
+      "size_type": "auto",
+      "src": "",
+      "alt": "",
+      "loading": "lazy"
+    }
+  },
+  {
+    "name": "event_title",
+    "label": "Event Title",
+    "required": true,
+    "type": "text"
+  },
+  {
+    "name": "event_date",
+    "label": "Event Date",
+    "required": true,
+    "type": "date"
+  },
+  {
+    "name": "event_time",
+    "label": "Event Time",
+    "required": false,
+    "type": "text",
+    "help_text": "e.g., 6:30 PM - 9:00 PM"
+  },
+  {
+    "name": "event_venue",
+    "label": "Event Venue",
+    "required": false,
+    "type": "text"
+  },
+  {
+    "name": "event_category",
+    "label": "Event Category",
+    "required": false,
+    "type": "choice",
+    "choices": [
+      ["#Socializers", "#Socializers"],
+      ["#RedHat", "#RedHat"],
+      ["#Midtown", "#Midtown"]
+    ],
+    "default": "#Socializers"
+  },
+  {
+    "name": "event_description",
+    "label": "Event Description",
+    "required": false,
+    "type": "richtext"
+  },
+  {
+    "name": "rsvp_button_text",
+    "label": "RSVP Button Text",
+    "required": false,
+    "type": "text",
+    "default": "RSVP"
+  },
+  {
+    "name": "rsvp_button_link",
+    "label": "RSVP Button Link",
+    "required": false,
+    "type": "link",
+    "default": {
+      "url": {
+        "content_id": null,
+        "type": "EXTERNAL",
+        "href": ""
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  }
+]

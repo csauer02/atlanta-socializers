@@ -1,0 +1,51 @@
+[
+  {
+    "name": "primary_color",
+    "label": "Primary Color",
+    "type": "color",
+    "default": "#4A90E2",
+    "group": "Brand Colors"
+  },
+  {
+    "name": "secondary_color",
+    "label": "Secondary Color",
+    "type": "color",
+    "default": "#F5A623",
+    "group": "Brand Colors"
+  },
+  {
+    "name": "text_color",
+    "label": "Text Color",
+    "type": "color",
+    "default": "#333333",
+    "group": "Brand Colors"
+  },
+  {
+    "name": "primary_font",
+    "label": "Primary Font",
+    "type": "font",
+    "default": {},
+    "group": "Typography"
+  },
+  {
+    "name": "heading_font",
+    "label": "Heading Font",
+    "type": "font",
+    "default": {},
+    "group": "Typography"
+  },
+  {
+    "name": "primary_button_color",
+    "label": "Primary Button Color",
+    "type": "color",
+    "default": "#4A90E2",
+    "group": "Button Styles"
+  },
+  {
+    "name": "button_border_radius",
+    "label": "Button Border Radius",
+    "type": "number",
+    "default": 4,
+    "group": "Button Styles"
+  }
+]

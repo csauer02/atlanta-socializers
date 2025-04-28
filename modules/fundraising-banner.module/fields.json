@@ -1,0 +1,72 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "required": true,
+    "type": "text",
+    "default": "Support Lost and Found Youth"
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "required": false,
+    "type": "richtext",
+    "default": "<p>In 2023, we raised over $6,000 for LNFY and helped secure an additional $20,000 in funding!</p>"
+  },
+  {
+    "name": "background_color",
+    "label": "Background Color",
+    "required": false,
+    "type": "color",
+    "default": "#F5A623"
+  },
+  {
+    "name": "statistics",
+    "label": "Statistics",
+    "required": false,
+    "type": "group",
+    "occurrence": {
+      "min": 0,
+      "max": 3
+    },
+    "default": [],
+    "children": [
+      {
+        "name": "stat_value",
+        "label": "Statistic Value",
+        "required": true,
+        "type": "text",
+        "default": "$6K+"
+      },
+      {
+        "name": "stat_label",
+        "label": "Statistic Label",
+        "required": true,
+        "type": "text",
+        "default": "Raised in 2023"
+      }
+    ]
+  },
+  {
+    "name": "cta_text",
+    "label": "CTA Button Text",
+    "required": false,
+    "type": "text",
+    "default": "Donate Today"
+  },
+  {
+    "name": "cta_link",
+    "label": "CTA Button Link",
+    "required": false,
+    "type": "link",
+    "default": {
+      "url": {
+        "content_id": null,
+        "type": "EXTERNAL",
+        "href": "/donate"
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  }
+]

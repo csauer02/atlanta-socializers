@@ -1,0 +1,21 @@
+<div class="event-card">
+  {% if content.featured_image %}
+    <div class="event-image-container">
+      <img src="{{ content.featured_image }}" alt="{{ content.title }}" class="event-image">
+      <span class="event-category">{{ content.category }}</span>
+    </div>
+  {% endif %}
+  
+  <div class="event-details">
+    <h3 class="event-title">{{ content.name }}</h3>
+    <div class="event-meta">
+      <span class="event-date">{{ content.publish_date|datetimeformat('%b %e, %Y') }}</span>
+      <span class="event-time">{{ content.time }}</span>
+      <span class="event-venue">{{ content.venue }}</span>
+    </div>
+    <div class="event-description">
+      {{ content.post_body|truncatehtml(100) }}
+    </div>
+    <a href="{{ content.absolute_url }}" class="event-rsvp-button">RSVP</a>
+  </div>
+</div>

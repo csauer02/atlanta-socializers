@@ -1,0 +1,86 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Contact Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  {# Contact header #}
+  {% dnd_area "contact_header" label="Contact Header", class="contact-header" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <h1>Contact Us</h1>
+        <p>Have questions or suggestions? We'd love to hear from you!</p>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Contact form #}
+  {% dnd_area "contact_form" label="Contact Form", class="contact-form" %}
+    {% dnd_module path="@hubspot/form" %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Contact info #}
+  {% dnd_area "contact_info" label="Contact Info", class="contact-info" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="info-columns">
+          <div class="info-column">
+            <h2>General Inquiries</h2>
+            <p><strong>Email:</strong> <a href="mailto:info@atlantasocializers.org">info@atlantasocializers.org</a></p>
+            <p><strong>Response Time:</strong> 24-48 hours</p>
+          </div>
+          
+          <div class="info-column">
+            <h2>Event Information</h2>
+            <p><strong>Email:</strong> <a href="mailto:events@atlantasocializers.org">events@atlantasocializers.org</a></p>
+            <p><strong>Response Time:</strong> 24 hours</p>
+          </div>
+          
+          <div class="info-column">
+            <h2>Partnership Opportunities</h2>
+            <p><strong>Email:</strong> <a href="mailto:partners@atlantasocializers.org">partners@atlantasocializers.org</a></p>
+            <p><strong>Response Time:</strong> 2-3 business days</p>
+          </div>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Social media #}
+  {% dnd_area "social_connect" label="Social Connect", class="social-connect" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="social-section">
+          <h2>Connect With Us</h2>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/atlantasocializers" target="_blank" class="social-icon instagram">
+              <img src="{{ get_asset_url('../images/instagram.svg') }}" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/atlantasocializers" target="_blank" class="social-icon facebook">
+              <img src="{{ get_asset_url('../images/facebook.svg') }}" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com/atlsocializers" target="_blank" class="social-icon twitter">
+              <img src="{{ get_asset_url('../images/twitter.svg') }}" alt="Twitter">
+            </a>
+          </div>
+          <p>Follow us on social media for the latest updates, event photos, and community news!</p>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Map #}
+  {% dnd_area "map_section" label="Map Section", class="map-section" %}
+    {% dnd_module path="@hubspot/custom_html" %}
+      {% module_attribute "html" %}
+        <div class="map-container">
+          <h2>Find Us in Atlanta</h2>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.7411321579!2d-84.56052538359373!3d33.76804959168519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045d6993098d%3A0x66fede2f990b630b!2sAtlanta%2C%20GA!5e0!3m2!1sen!2sus!4v1656535528155!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+{% endblock body %}

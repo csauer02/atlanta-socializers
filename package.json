@@ -1,0 +1,42 @@
+{
+  "name": "atlanta-socializers",
+  "version": "1.0.0",
+  "description": "Atlanta Socializers Club Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/**/*.js",
+    "build": "webpack --mode production",
+    "watch": "hs watch",
+    "deploy": "node deploy.js",
+    "deploy:staging": "node deploy.js --dev",
+    "watch:production": "hs watch --account=production",
+    "watch:sandbox": "hs watch --account=dev-sandbox",
+    "fetch:production": "hs fetch atlanta-socializers . --account=production",
+    "fetch:sandbox": "hs fetch atlanta-socializers . --account=dev-sandbox",
+    "cypress": "cypress open",
+    "a11y": "pa11y-ci http://localhost:3000 --viewport \"375x667\""
+  },
+  "dependencies": {
+    "@hubspot/cli": "^7.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "babel-loader": "^10.0.0",
+    "cypress": "^14.3.2",
+    "eslint": "^9.25.1",
+    "jest": "^29.7.0",
+    "lighthouse": "^12.6.0",
+    "pa11y-ci": "^3.1.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  }
+}

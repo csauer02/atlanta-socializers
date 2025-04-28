@@ -1,0 +1,48 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: RSVP Confirmation Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  {# RSVP Confirmation content #}
+  {% dnd_area "confirmation_content" label="Confirmation Content", class="confirmation-content" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="confirmation-message">
+          <h1>Thank You for Your RSVP!</h1>
+          <p>We're excited to see you at the event. A confirmation email has been sent to your inbox with all the details.</p>
+          <p>If you selected to add this event to your calendar, you can download the calendar invite below:</p>
+          <a href="/event-calendar.functions/ics?title={{ content.title | url_encode }}&start={{ content.event_start | url_encode }}&end={{ content.event_end | url_encode }}&location={{ content.venue | url_encode }}" class="calendar-button">Add to Calendar</a>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Related events section #}
+  {% dnd_area "related_events" label="Related Events", class="related-events" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <h2>You Might Also Be Interested In:</h2>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+    
+    {% dnd_module path="@hubspot/blog_listing" 
+      blog_listing_html={{
+        "enable_featured_image": true,
+        "show_author": false,
+        "show_date": true,
+        "listing_layout": "grid",
+        "cards_per_row": 3,
+        "show_summary": true
+      }}
+      featured_image={{
+        "showing_image": true,
+        "max_width": 800,
+        "loading": "lazy"
+      }}
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+{% endblock body %}

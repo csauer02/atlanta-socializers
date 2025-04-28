@@ -1,0 +1,162 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Home Page
+-->
+
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <div class="home-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1>Welcome to Atlanta Socializers Club</h1>
+        <p class="hero-subtitle">A diverse community creating safe spaces for LGBTQ+ and allies</p>
+        <a href="/events" class="hero-button">Upcoming Events</a>
+      </div>
+    </section>
+    
+    <!-- Upcoming Events Section -->
+    <section class="events-section">
+      <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="event-cards-container">
+          <!-- Event Card 1 -->
+          <div class="event-card">
+            <div class="event-image-container">
+              <img src="{{ get_asset_url('images/theme-screenshot.png') }}" alt="Networking Mixer" class="event-image">
+              <span class="event-category">#Socializers</span>
+            </div>
+            <div class="event-details">
+              <h3 class="event-title">Networking Mixer</h3>
+              <div class="event-meta">
+                <span class="event-date">May 15, 2025</span>
+                <span class="event-time">6:30 PM</span>
+                <span class="event-venue">Larakin Lounge</span>
+              </div>
+              <div class="event-description">
+                <p>Join us for a casual networking event with drinks and appetizers. Meet new friends and connect with the community.</p>
+              </div>
+              <a href="/events/networking-mixer" class="event-rsvp-button">RSVP</a>
+            </div>
+          </div>
+
+          <!-- Event Card 2 -->
+          <div class="event-card">
+            <div class="event-image-container">
+              <img src="{{ get_asset_url('images/theme-screenshot.png') }}" alt="Pride Celebration" class="event-image">
+              <span class="event-category">#RedHat</span>
+            </div>
+            <div class="event-details">
+              <h3 class="event-title">Pride Celebration</h3>
+              <div class="event-meta">
+                <span class="event-date">June 5, 2025</span>
+                <span class="event-time">7:00 PM</span>
+                <span class="event-venue">The Intercontinental Hotel</span>
+              </div>
+              <div class="event-description">
+                <p>Celebrate Pride Month with music, dancing, and special performances. Formal attire requested.</p>
+              </div>
+              <a href="/events/pride-celebration" class="event-rsvp-button">RSVP</a>
+            </div>
+          </div>
+
+          <!-- Event Card 3 -->
+          <div class="event-card">
+            <div class="event-image-container">
+              <img src="{{ get_asset_url('images/theme-screenshot.png') }}" alt="Charity Dinner" class="event-image">
+              <span class="event-category">#Midtown</span>
+            </div>
+            <div class="event-details">
+              <h3 class="event-title">Charity Dinner</h3>
+              <div class="event-meta">
+                <span class="event-date">July 12, 2025</span>
+                <span class="event-time">6:00 PM</span>
+                <span class="event-venue">The Kimpton Hotel</span>
+              </div>
+              <div class="event-description">
+                <p>Annual fundraising dinner benefiting Lost and Found Youth. Ticket includes dinner, drinks, and entertainment.</p>
+              </div>
+              <a href="/events/charity-dinner" class="event-rsvp-button">RSVP</a>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-container">
+          <a href="/events" class="view-all-link">View All Events</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Happy Hour Guide Section -->
+    <section class="guide-section">
+      <div class="container">
+        <h2 class="section-title">Atlanta Happy Hour Guide</h2>
+        <p class="section-description">Discover the best happy hour spots in Atlanta, curated by our community.</p>
+        <div class="guide-preview">
+          <div class="guide-card">
+            <h3>Midtown</h3>
+            <p>Explore trendy spots with great drink specials</p>
+            <a href="/guide#midtown" class="guide-link">View Venues</a>
+          </div>
+          <div class="guide-card">
+            <h3>Buckhead</h3>
+            <p>Upscale lounges and bars with craft cocktails</p>
+            <a href="/guide#buckhead" class="guide-link">View Venues</a>
+          </div>
+          <div class="guide-card">
+            <h3>Downtown</h3>
+            <p>Historic pubs and modern hangouts</p>
+            <a href="/guide#downtown" class="guide-link">View Venues</a>
+          </div>
+        </div>
+        <a href="/guide" class="view-guide-button">View Full Guide</a>
+      </div>
+    </section>
+    
+    <!-- Fundraising Banner -->
+    <section class="fundraising-section">
+      <div class="fundraising-banner" style="background-color: #F5A623;">
+        <div class="container">
+          <h2>Support Lost and Found Youth</h2>
+          <p>In 2023, we raised over $6,000 for LNFY and helped secure an additional $20,000 in funding!</p>
+          <div class="fundraising-stats">
+            <div class="stat-item">
+              <span class="stat-value">$6K+</span>
+              <span class="stat-label">Raised in 2023</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">$20K</span>
+              <span class="stat-label">Additional Funding</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Goes to Charity</span>
+            </div>
+          </div>
+          <a href="/donate" class="cta-button">Donate Today</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+      <div class="container">
+        <h2 class="section-title">Stay Connected</h2>
+        <p class="section-description">Subscribe to our newsletter to stay updated on upcoming events and community news.</p>
+        <div class="newsletter-form">
+          <form action="/subscribe" method="post">
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your email address" required>
+              <button type="submit" class="newsletter-button">Subscribe</button>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="privacy" name="privacy" required>
+              <label for="privacy">I agree to the <a href="/privacy">privacy policy</a></label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock body %}

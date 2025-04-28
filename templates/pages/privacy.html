@@ -1,0 +1,158 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Privacy Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  {# Privacy header #}
+  {% dnd_area "privacy_header" label="Privacy Header", class="privacy-header" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <h1>Privacy Policy & Terms</h1>
+        <p>Last Updated: April 28, 2025</p>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Privacy content #}
+  {% dnd_area "privacy_content" label="Privacy Content", class="privacy-content" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="privacy-section">
+          <h2>1. Introduction</h2>
+          <p>Welcome to the Atlanta Socializers Club website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+          <p>Please read this Privacy Policy carefully. By accessing or using our website, you acknowledge that you have read, understood, and agree to be bound by all the terms outlined in this policy.</p>
+        </div>
+        
+        <div class="privacy-section">
+          <h2>2. Information We Collect</h2>
+          <h3>2.1 Personal Information</h3>
+          <p>We may collect personal information that you voluntarily provide to us when you:</p>
+          <ul>
+            <li>Register for an account</li>
+            <li>Sign up for our newsletter</li>
+            <li>RSVP for events</li>
+            <li>Complete forms on our website</li>
+            <li>Contact us directly</li>
+          </ul>
+          <p>This information may include:</p>
+          <ul>
+            <li>Name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Mailing address</li>
+            <li>Preferences and interests</li>
+          </ul>
+          
+          <h3>2.2 Automatically Collected Information</h3>
+          <p>When you access our website, we may automatically collect certain information about your device and usage patterns, including:</p>
+          <ul>
+            <li>IP address</li>
+            <li>Browser type and version</li>
+            <li>Operating system</li>
+            <li>Referring website</li>
+            <li>Pages you view</li>
+            <li>Time spent on pages</li>
+            <li>Links you click</li>
+            <li>Other browsing information</li>
+          </ul>
+        </div>
+        
+        <div class="privacy-section">
+          <h2>3. How We Use Your Information</h2>
+          <p>We may use the information we collect for various purposes, including to:</p>
+          <ul>
+            <li>Process event RSVPs and registrations</li>
+            <li>Send you email newsletters and updates</li>
+            <li>Respond to your inquiries and provide customer service</li>
+            <li>Personalize your experience on our website</li>
+            <li>Improve our website and services</li>
+            <li>Analyze usage patterns and trends</li>
+            <li>Protect against unauthorized access and legal liability</li>
+          </ul>
+        </div>
+        
+        <div class="privacy-section">
+          <h2>4. Sharing Your Information</h2>
+          <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:</p>
+          <ul>
+            <li>With service providers who assist us in operating our website and conducting our business</li>
+            <li>To comply with legal obligations</li>
+            <li>To protect our rights, privacy, safety, or property</li>
+            <li>In connection with a business transfer, such as a merger or acquisition</li>
+          </ul>
+        </div>
+        
+        <div class="privacy-section">
+          <h2>5. Your Choices</h2>
+          <p>You can control your information in the following ways:</p>
+          <ul>
+            <li>Update or correct your personal information by contacting us</li>
+            <li>Opt-out of receiving our newsletters or promotional emails by following the unsubscribe instructions</li>
+            <li>Adjust your browser settings to refuse cookies or alert you when cookies are being sent</li>
+          </ul>
+        </div>
+        
+        <div class="privacy-section">
+          <h2>6. Data Security</h2>
+          <p>We implement reasonable security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
+          <p>However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+        </div>
+        
+        <div class="privacy-section">
+          <h2>7. Changes to This Privacy Policy</h2>
+          <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+          <p>You are advised to review this Privacy Policy periodically for any changes.</p>
+        </div>
+        
+        <div class="privacy-section">
+          <h2>8. Contact Us</h2>
+          <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+          <p>Email: <a href="mailto:privacy@atlantasocializers.org">privacy@atlantasocializers.org</a></p>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+  
+  {# Terms content #}
+  {% dnd_area "terms_content" label="Terms Content", class="terms-content" %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div class="terms-section">
+          <h2>Terms of Service</h2>
+          <p>By accessing or using the Atlanta Socializers Club website, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions, you may not access or use our services.</p>
+          
+          <h3>1. User Conduct</h3>
+          <p>When using our website or attending our events, you agree to:</p>
+          <ul>
+            <li>Comply with all applicable laws and regulations</li>
+            <li>Respect the rights and dignity of other users</li>
+            <li>Provide accurate information when registering for events</li>
+            <li>Not engage in any discriminatory, harassing, or harmful behavior</li>
+            <li>Not attempt to gain unauthorized access to our systems or user accounts</li>
+          </ul>
+          
+          <h3>2. Event Policies</h3>
+          <p>When registering for our events:</p>
+          <ul>
+            <li>RSVP is required for most events</li>
+            <li>Some events may require a donation or entry fee</li>
+            <li>We reserve the right to refuse entry to anyone who violates our code of conduct</li>
+            <li>Photos and videos may be taken at events for promotional purposes</li>
+          </ul>
+          
+          <h3>3. Intellectual Property</h3>
+          <p>All content on our website, including text, graphics, logos, images, and software, is the property of Atlanta Socializers Club or its content suppliers and is protected by copyright laws.</p>
+          
+          <h3>4. Limitation of Liability</h3>
+          <p>Atlanta Socializers Club and its officers, directors, employees, and volunteers are not liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our website or attendance at our events.</p>
+          
+          <h3>5. Changes to Terms</h3>
+          <p>We reserve the right to modify these Terms of Service at any time. Your continued use of our website following any changes constitutes your acceptance of the revised terms.</p>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_area %}
+{% endblock body %}

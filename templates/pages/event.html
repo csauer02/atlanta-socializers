@@ -1,0 +1,67 @@
+<!--
+templateType: blog_post
+isAvailableForNewContent: true
+label: Event Detail Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <div class="event-detail-page">
+    <!-- Event Header -->
+    <section class="event-header">
+      <div class="container">
+        <h1>{{ content.name }}</h1>
+        <div class="event-meta">
+          <span class="event-date">{{ content.publish_date|datetimeformat('%B %e, %Y') }}</span>
+          {% if content.time %}
+            <span class="event-time">{{ content.time }}</span>
+          {% endif %}
+          {% if content.venue %}
+            <span class="event-venue">{{ content.venue }}</span>
+          {% endif %}
+          {% if content.category %}
+            <span class="event-category">{{ content.category }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Event Content -->
+    <section class="event-content">
+      <div class="container">
+        <div class="event-description">
+          {{ content.post_body }}
+        </div>
+      </div>
+    </section>
+    
+    <!-- RSVP Form -->
+    <section class="rsvp-section">
+      <div class="container">
+        <h2>RSVP for this Event</h2>
+        <div id="event-rsvp-form">
+          <!-- Form will be inserted here via HubSpot Forms API -->
+          <script>
+            hbspt.forms.create({
+              region: "na1",
+              portalId: "242637285",
+              formId: "YOUR_FORM_ID"
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Social Sharing -->
+    <section class="social-sharing">
+      <div class="container">
+        <h3>Share This Event</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url }}" target="_blank" class="social-icon facebook">Facebook</a>
+          <a href="https://twitter.com/intent/tweet?url={{ content.absolute_url }}&text={{ content.name }}" target="_blank" class="social-icon twitter">Twitter</a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ content.absolute_url }}" target="_blank" class="social-icon linkedin">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock body %}
